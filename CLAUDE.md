@@ -13,8 +13,13 @@ Built with Vision Framework (`VNDetectFaceLandmarksRequest`) + AVFoundation.
 - **Pricing:** ¥300 one-time purchase at launch → ¥500 after traction. No subscription.
 - **Language:** English first (v1.0), Japanese next (v1.x), then data-driven expansion.
 - **Eye detection threshold:** 0.8 confidence on both `leftEyeOpenConfidence` and `rightEyeOpenConfidence`
-- **Unlock duration:** 3 seconds continuous (≈90 frames @ 30fps). Blink = reset.
+- **Unlock duration:** user-configurable 3–10 seconds (default 5s). Blink or face lost = reset.
 - **No TrueDepth required:** Uses standard AVFoundation, works on all modern iPhones.
+- **Face feature:** per-alarm toggle (ON/OFF). When OFF, acts as a standard alarm.
+- **Snooze:** per-alarm toggle. Snooze and Face feature are mutually exclusive (snooze ON = Face OFF).
+- **Time picker:** separate hour / minute drum-roll columns (1-minute granularity).
+- **Detection feedback:** face frame turns green when detected, red when not. "顔が検出できません" shown when lost.
+- **Success screen:** confetti animation + elapsed time from alarm fire to dismissal.
 - **AI support:** Claude Knowledge Plugin for in-app FAQ + personalized wake tips.
 - **Design tool:** Claude Design (claude.ai/design) for UI mockups → Claude Code handoff.
 
