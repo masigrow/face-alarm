@@ -1,0 +1,40 @@
+# Xcode
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+build/
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# CocoaPods (not used, but just in case)
+Pods/
+Podfile.lock
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+
+# Environment / Secrets
+.env
+.env.local
+*.p8
+*.p12
+*.mobileprovision
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude / AI tools
+# (CLAUDE.md is intentionally tracked)
+
+# Test results
+TestResults.xcresult/
