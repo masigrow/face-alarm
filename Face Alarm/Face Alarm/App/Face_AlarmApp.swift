@@ -11,7 +11,7 @@ import SwiftUI
 struct Face_AlarmApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AlarmListView()
         }
     }
 }
