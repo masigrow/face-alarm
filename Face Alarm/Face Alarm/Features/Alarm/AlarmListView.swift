@@ -7,6 +7,7 @@ struct AlarmListView: View {
         Alarm(hour: 7, minute: 0, repeatDays: Set(Weekday.allCases), isEnabled: false, faceEnabled: false)
     ]
     @State private var showingAddAlarm = false
+    @State private var newAlarm = Alarm(hour: 7, minute: 0)
 
     var body: some View {
         TabView {
@@ -32,7 +33,10 @@ struct AlarmListView: View {
                     }
                 }
                 .sheet(isPresented: $showingAddAlarm) {
-                    Text("Alarm settings coming soon")
+                    AlarmSettingsView(alarm: $newAlarm) { saved in
+                        alarms.append(saved)
+                        newAlarm = Alarm(hour: 7, minute: 0)
+                    }
                 }
             }
             .tabItem {
