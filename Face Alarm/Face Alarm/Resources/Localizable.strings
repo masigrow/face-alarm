@@ -1,0 +1,23 @@
+/* Alarm List */
+"alarm.title" = "Alarm";
+"alarm.edit" = "Edit";
+
+/* Alarm Settings */
+"settings.title" = "Add Alarm";
+"settings.repeat" = "Repeat";
+"settings.sound" = "Sound";
+"settings.snooze" = "Snooze";
+"settings.face" = "Face Feature";
+"settings.duration" = "Eyes open duration";
+"settings.save" = "Save";
+"settings.cancel" = "Cancel";
+
+/* Face Unlock */
+"face.detected" = "Face detected";
+"face.not_detected" = "Face not detected";
+"face.instruction" = "Keep both eyes open";
+
+/* Success */
+"success.title" = "Good morning!";
+"success.close" = "Close";
+"success.wake_time" = "Wake time";
