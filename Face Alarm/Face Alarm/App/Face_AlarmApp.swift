@@ -6,7 +6,7 @@ struct Face_AlarmApp: App {
         WindowGroup {
             AlarmListView()
                 .task {
-                    await AlarmScheduler.shared.requestPermission()
+                    _ = await AlarmScheduler.shared.requestPermission()
                 }
         }
     }
