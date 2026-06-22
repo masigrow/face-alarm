@@ -17,7 +17,10 @@ struct AlarmListView: View {
                         AlarmRowView(alarm: $alarm)
                             .listRowBackground(Color(uiColor: .secondarySystemGroupedBackground))
                     }
-                    .onDelete { alarms.remove(atOffsets: $0) }
+                    .onDelete { offsets in
+                offsets.forEach { AlarmScheduler.shared.cancel(alarms[$0]) }
+                alarms.remove(atOffsets: offsets)
+            }
                 }
                 .navigationTitle("Alarm")
                 .toolbar {
@@ -35,6 +38,7 @@ struct AlarmListView: View {
                 .sheet(isPresented: $showingAddAlarm) {
                     AlarmSettingsView(alarm: $newAlarm) { saved in
                         alarms.append(saved)
+                        AlarmScheduler.shared.schedule(saved)
                         newAlarm = Alarm(hour: 7, minute: 0)
                     }
                 }
@@ -78,6 +82,9 @@ struct AlarmRowView: View {
             Spacer()
             Toggle("", isOn: $alarm.isEnabled)
                 .labelsHidden()
+                .onChange(of: alarm.isEnabled) {
+                    AlarmScheduler.shared.schedule(alarm)
+                }
         }
         .padding(.vertical, 4)
     }
