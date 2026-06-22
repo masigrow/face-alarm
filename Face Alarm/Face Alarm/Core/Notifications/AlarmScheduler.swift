@@ -20,7 +20,7 @@ final class AlarmScheduler {
         content.body = alarm.faceEnabled
             ? "Open your eyes to dismiss"
             : "Tap to dismiss"
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: alarm.soundName))
+        content.sound = .defaultCritical
         content.userInfo = ["alarmId": alarm.id.uuidString, "faceEnabled": alarm.faceEnabled]
         content.interruptionLevel = .timeSensitive
 
